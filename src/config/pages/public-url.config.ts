@@ -7,6 +7,7 @@ class PUBLIC {
 	HOME = '/'
 	FOR_CUSTOMER = `/for-client`
 	FOR_EXECUTOR = `/for-implementer`
+	
 	ASSOCIATION = {
 		TASKS: `${this.association}/tasks`,
 		CHARTER: `${this.association}/charter`,

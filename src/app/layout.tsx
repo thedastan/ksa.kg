@@ -9,6 +9,8 @@ import { THEME_COLOR } from '@/config/_variables.config'
 import Head from './Head'
 import { Providers } from './providers'
 import '@/styles/globals.scss'
+import Header from '@/components/navbar/header'
+import Footer from '@/components/navbar/footer'
 
 export const metadata: Metadata = {
 	title: {
@@ -29,10 +31,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<Head />
+			 
 			<body className={inter.className}>
 				<ChakraProvider>
+				<Header />
 					<Providers>{children}</Providers>
+
+					<Footer/>
 				</ChakraProvider>
 
 				{/* <YandexMetrika /> */}

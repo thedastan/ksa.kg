@@ -60,4 +60,16 @@
 	}
 }
 
+.home_news {
+  overflow-x: scroll;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+	
+	// background: #777777;
+
+}
