@@ -15,6 +15,7 @@ import { Toaster } from 'sonner'
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 
 import { persistor, store } from '@/store/store'
+import Header from '@/components/navbar/header'
 
 export function Providers({ children }: PropsWithChildren) {
 	const [innerHeight, setHeight] = useState(0)
@@ -49,6 +50,7 @@ export function Providers({ children }: PropsWithChildren) {
 					bg='#FFFFFF'
 					pt={HEADER_HEIGHT}
 				>
+					
 					{children}
 				</Box>
 				<Toaster
