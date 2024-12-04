@@ -2,106 +2,98 @@
 
 import {
 	Box,
-	Container,
 	Flex,
 	Popover,
-	PopoverBody,
 	PopoverContent,
 	PopoverTrigger,
+	Stack,
 	Text
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsArrowRight } from 'react-icons/bs'
+import { HiUser } from 'react-icons/hi2'
 import { IoIosArrowDown } from 'react-icons/io'
 
 import DefButton from '@/components/ui/buttons/DefButton'
+import ContainerDefault from '@/components/ui/providers/container'
 import Description from '@/components/ui/texts/Description'
 
 import logo from '@/assets/img/logo.png'
 
-import { CONTAINER_WIDTH } from '@/config/_variables.config'
+import { HEADER_HEIGHT } from '@/config/_variables.config'
+import { ACCESS_PAGES } from '@/config/pages/access-url.config'
+import { USER_PAGES } from '@/config/pages/private-url.config'
 
-import { activity_pages } from '@/app/activity/data'
-import { association_pages } from '@/app/association/data'
-import { press_center_pages } from '@/app/press-center/data'
-
-const link = [
-	{
-		title: 'Главная',
-		link: '/'
-	},
-	{
-		title: 'Каталог компаний',
-		link: '/'
-	},
-	{
-		title: 'Выставки',
-		link: '/'
-	},
-	{
-		title: 'Контакты',
-		link: '/'
-	}
-]
-
-const homeLink = [
-	{
-		title: 'Заказчику',
-		link: '/for-client'
-	},
-	{
-		title: 'Производителю',
-		link: '/for-implementer'
-	}
-]
+import { main_navbar, navbar_menu, role_navbar } from '../data'
 
 const Header = () => {
 	const pathname = usePathname()
 	return (
 		<Box
 			bg='#F3F4FB'
-			p='10px 0'
+			h={HEADER_HEIGHT}
+			position='fixed'
+			left='0'
+			top='0'
+			right='0'
+			w='100%'
+			zIndex='40'
 		>
-			<Container maxW={CONTAINER_WIDTH}>
-				<Box
-					// py='10px'
+			<ContainerDefault>
+				<Flex
+					mt='4'
+					justifyContent='space-between'
+					alignItems='start'
 					borderBottom='solid 1.5px #c1cece'
+					h='26px'
 				>
-					<Flex justifyContent='space-between'>
-						<Flex gap={6}>
-							{link.map((el, index) => (
-								<Link
-									key={index}
-									href={el.link}
-									style={{
-										// borderBottom:
-										// 	pathname === el.link ? 'solid 2px red' : 'none',
-										padding: '10px'
-									}}
-								>
-									{el.title}
-								</Link>
-							))}
-						</Flex>
+					<Flex
+						gap={6}
+						fontWeight='400'
+						fontSize='12px'
+						lineHeight='13px'
+						h='100%'
+					>
+						{main_navbar.map((el, index) => (
+							<Box
+								key={index}
+								h='100%'
+								borderBottom={
+									pathname === el.link ? '2px solid #E3484F' : 'none'
+								}
+							>
+								<Link href={el.link}>{el.title}</Link>
+							</Box>
+						))}
+					</Flex>
+					<Link href={ACCESS_PAGES.REGISTER}>
 						<Flex
-							justifyContent='center'
 							alignItems='center'
 							gap={2}
 						>
-							<Text>Регистрация</Text>
+							<Text
+								fontWeight='400'
+								fontSize='12px'
+								lineHeight='13px'
+							>
+								Регистрация
+							</Text>
 							<BsArrowRight />
 						</Flex>
-					</Flex>
-				</Box>
+					</Link>
+				</Flex>
 
 				<Flex
 					py='10px'
 					justifyContent='space-between'
 					alignItems='center'
 				>
-					<Flex gap={4}>
+					<Flex
+						gap='8'
+						alignItems='center'
+					>
 						<Link href={'/'}>
 							<Image
 								width={81}
@@ -110,183 +102,118 @@ const Header = () => {
 								alt='logo'
 							/>
 						</Link>
-						<Flex gap={4}>
-							{/* //// */}
-
-							<Popover
-								trigger='hover'
-								placement='bottom-start'
-							>
-								<PopoverTrigger>
-									<Link
-										href={association_pages[0].path}
-										passHref
-									>
-										<Flex
-											alignItems='center'
-											gap={2}
-											cursor='pointer'
-											as='a'
-										>
-											<Text>Об ассоциации</Text>
-											<IoIosArrowDown />
-										</Flex>
-									</Link>
-								</PopoverTrigger>
-								<PopoverContent
-									border='1px solid'
-									borderColor='gray.200'
-									boxShadow='md'
-									p={2}
+						<Flex gap='6'>
+							{navbar_menu.map((el, idx) => (
+								<Popover
+									key={idx}
+									trigger='hover'
+									placement='bottom-start'
 								>
-									<PopoverBody>
-										<Flex flexDirection='column'>
-											{association_pages.map((el, idx) => (
-												<Link
-													href={el.path}
-													key={idx}
+									<PopoverTrigger>
+										<Link href={el.list[0].path}>
+											<Flex
+												alignItems='center'
+												gap={2}
+												cursor='pointer'
+											>
+												<Text
+													fontWeight='400'
+													fontSize='14px'
+													lineHeight='16px'
+													color='#12141D'
 												>
-													<Description
-														p={2}
-														borderRadius={10}
-														bg={pathname === el.path ? '#F3F4FB' : 'white'}
-														fontWeight={pathname === el.path ? 600 : 400}
-														color={pathname === el.path ? '#3046BF' : 'black'}
+													{el.title}
+												</Text>
+												<IoIosArrowDown />
+											</Flex>
+										</Link>
+									</PopoverTrigger>
+									<PopoverContent
+										border='1px solid'
+										borderColor='gray.200'
+										rounded='10px'
+										p={2}
+									>
+										<Stack
+											spacing='2px'
+											w='100%'
+										>
+											{el.list.map((nav, index) => (
+												<Link
+													href={nav.path}
+													key={index}
+												>
+													<Box
+														_hover={{ bg: '#F3F4FB' }}
+														borderRadius='8px'
+														bg={pathname === nav.path ? '#F3F4FB' : 'white'}
+														w='100%'
+														px='2'
+														py='6px'
 													>
-														{el.name}
-													</Description>
+														<Description
+															fontWeight={pathname === nav.path ? 600 : 400}
+															color={
+																pathname === nav.path ? '#3046BF' : 'black'
+															}
+														>
+															{nav.name}
+														</Description>
+													</Box>
 												</Link>
 											))}
-										</Flex>
-									</PopoverBody>
-								</PopoverContent>
-							</Popover>
-
-							<Popover
-								trigger='hover'
-								placement='bottom-start'
-							>
-								<PopoverTrigger>
-									<Link
-										href={activity_pages[0].path}
-										passHref
-									>
-										<Flex
-											alignItems='center'
-											gap={2}
-											cursor='pointer'
-											as='a'
-										>
-											<Text>Деятельность</Text>
-											<IoIosArrowDown />
-										</Flex>
-									</Link>
-								</PopoverTrigger>
-								<PopoverContent
-									border='1px solid'
-									borderColor='gray.200'
-									boxShadow='md'
-									p={2}
-								>
-									<PopoverBody>
-										<Flex flexDirection='column'>
-											{activity_pages.map((el, idx) => (
-												<Link
-													href={el.path}
-													key={idx}
-												>
-													<Description
-														p={2}
-														borderRadius={10}
-														bg={pathname === el.path ? '#F3F4FB' : 'white'}
-														fontWeight={pathname === el.path ? 600 : 400}
-														color={pathname === el.path ? '#3046BF' : 'black'}
-													>
-														{el.name}
-													</Description>
-												</Link>
-											))}
-										</Flex>
-									</PopoverBody>
-								</PopoverContent>
-							</Popover>
-
-							<Popover
-								trigger='hover'
-								placement='bottom-start'
-							>
-								<PopoverTrigger>
-									<Link
-										href={press_center_pages[0].path}
-										passHref
-									>
-										<Flex
-											alignItems='center'
-											gap={2}
-											cursor='pointer'
-											as='a'
-										>
-											<Text>Пресс-центр</Text>
-											<IoIosArrowDown />
-										</Flex>
-									</Link>
-								</PopoverTrigger>
-								<PopoverContent
-									border='1px solid'
-									borderColor='gray.200'
-									boxShadow='md'
-									p={2}
-								>
-									<PopoverBody>
-										<Flex flexDirection='column'>
-											{press_center_pages.map((el, idx) => (
-												<Link
-													href={el.path}
-													key={idx}
-												>
-													<Description
-														p={2}
-														borderRadius={10}
-														bg={pathname === el.path ? '#F3F4FB' : 'white'}
-														fontWeight={pathname === el.path ? 600 : 400}
-														color={pathname === el.path ? '#3046BF' : 'black'}
-													>
-														{el.name}
-													</Description>
-												</Link>
-											))}
-										</Flex>
-									</PopoverBody>
-								</PopoverContent>
-							</Popover>
-
-							{/* //// */}
+										</Stack>
+									</PopoverContent>
+								</Popover>
+							))}
 						</Flex>
 					</Flex>
 					<Flex
 						gap={4}
 						justifyContent='center'
 						alignItems='center'
+						fontSize='14px'
+						fontWeight='500'
+						lineHeight='24px'
 					>
-						{homeLink.map((el, index) => (
+						{role_navbar.map((el, index) => (
 							<Link
 								key={index}
 								href={el.link}
 							>
-								{el.title}
+								<Text color={el.link === pathname ? '#3046BF' : '#12141D'}>
+									{el.title}
+								</Text>
 							</Link>
 						))}
-
-						<DefButton
+						{/* <DefButton
 							w='100px'
 							h='40px'
 							bg='#E3484F'
 						>
 							Войти
-						</DefButton>
+						</DefButton> */}
+						<Link href={USER_PAGES.MY_COMPANIES}>
+							<Flex
+								alignItems='center'
+								gap='1'
+								minW='100px'
+								h='40px'
+								bg='#E3484F'
+								fontSize='14px'
+								fontWeight='400'
+								lineHeight='16.1px'
+								color='#FFFFFF'
+								rounded='100px'
+								px='4'
+							>
+								<HiUser />
+								John Doe
+							</Flex>
+						</Link>
 					</Flex>
 				</Flex>
-			</Container>
+			</ContainerDefault>
 		</Box>
 	)
 }

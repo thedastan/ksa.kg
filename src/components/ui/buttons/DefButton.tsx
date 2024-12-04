@@ -14,6 +14,7 @@ const DefButton = ({
 	disabled,
 	isLight,
 	children,
+	bg = 'linear-gradient(90deg, #FF7B00 0%, #FF4A00 100%)',
 	...props
 }: DefButtonProps) => {
 	return (
@@ -23,16 +24,14 @@ const DefButton = ({
 			variant='none'
 			w='100%'
 			border='none'
-			bg={
-				isLight ? '#F5F5F5' : 'linear-gradient(90deg, #FF7B00 0%, #FF4A00 100%)'
-			}
+			bg={isLight ? '#F5F5F5' : bg}
 			h='54px'
 			rounded='100px'
 			color={isLight ? '#232D37' : '#FFFFFF'}
 			fontSize='16px'
 			fontWeight='600'
 			isDisabled={disabled}
-			px='2'
+			px='4'
 			lineHeight='22px'
 			{...props}
 		>
