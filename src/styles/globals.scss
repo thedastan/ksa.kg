@@ -2,27 +2,27 @@
 @import 'spinner';
 
 .phone-input {
-	background: transparent !important;
-	margin-bottom: 12px;
-	border-radius: 16px !important;
-	border: 1px solid #1a1d201f !important;
+	background: #f7f7f7 !important;
+	margin-bottom: 16px;
+	border-radius: 8px !important;
+	border: 1px solid #ececec !important;
 	input {
 		width: 100%;
 		font-size: 16px !important;
-		line-height: 22px !important;
+		line-height: 18.26px !important;
 		font-weight: 400 !important;
 		color: #232d37 !important;
 		background: transparent !important;
-		height: 56px !important;
+		height: 54px !important;
 		border: none !important;
-		border-top-right-radius: 16px !important;
-		border-bottom-right-radius: 16px !important;
+		border-top-right-radius: 8px !important;
+		border-bottom-right-radius: 8px !important;
 		overflow: hidden;
 	}
 	.react-international-phone-country-selector {
 		button {
-			border-top-left-radius: 16px !important;
-			border-bottom-left-radius: 16px !important;
+			border-top-left-radius: 8px !important;
+			border-bottom-left-radius: 8px !important;
 			overflow: hidden;
 			height: 100%;
 			width: 55px;
@@ -61,15 +61,20 @@
 }
 
 .home_news {
-  overflow-x: scroll;
+	overflow-x: scroll;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-	
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
 	// background: #777777;
+}
 
+.user-menu-active {
+	svg > path {
+		stroke: #3046bf;
+	}
 }

@@ -1,5 +1,5 @@
-export const INTERFACE_PADDING = '20px'
-export const CONTAINER_WIDTH = '1300px'
+export const INTERFACE_PADDING = { xl: '50px', base: '4' }
+export const CONTAINER_WIDTH = '1400px'
 
 export const HEADER_HEIGHT = '100px'
 

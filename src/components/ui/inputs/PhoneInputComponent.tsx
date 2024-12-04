@@ -1,12 +1,10 @@
-import { Stack } from '@chakra-ui/react'
+import { Stack, Text } from '@chakra-ui/react'
 import {
 	PhoneInput,
 	defaultCountries,
 	parseCountry
 } from 'react-international-phone'
 import 'react-international-phone/style.css'
-
-import Description from '../texts/Description'
 
 export interface IInputComponentProps {
 	name?: string
@@ -30,8 +28,15 @@ const PhoneInputComponent = ({
 		return ['kg'].includes(iso2)
 	})
 	return (
-		<Stack spacing='6px'>
-			<Description>{title}</Description>
+		<Stack spacing='1'>
+			<Text
+				fontWeight='600'
+				fontSize='12px'
+				lineHeight='15.65px'
+				color='#1C1B1F'
+			>
+				{title}
+			</Text>
 			<PhoneInput
 				defaultCountry='kg'
 				// countries={countries}

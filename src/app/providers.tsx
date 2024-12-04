@@ -12,10 +12,12 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import { Toaster } from 'sonner'
 
+import Footer from '@/components/navbar/footer'
+import Header from '@/components/navbar/header'
+
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 
 import { persistor, store } from '@/store/store'
-import Header from '@/components/navbar/header'
 
 export function Providers({ children }: PropsWithChildren) {
 	const [innerHeight, setHeight] = useState(0)
@@ -37,22 +39,22 @@ export function Providers({ children }: PropsWithChildren) {
 
 	return (
 		<QueryClientProvider client={client}>
-			{/* <HydrationBoundary state={dehydratedState}>
-				<Provider store={store}>
+			<HydrationBoundary state={dehydratedState}>
+				{/*<Provider store={store}>
 					<PersistGate
 						persistor={persistor}
 						loading={null}
 					> */}
-			<>
+				<Header />
 				<Box
 					mx='auto'
-					minH={innerHeight ? innerHeight + 'px' : '100vh'}
+					minH='100vh'
 					bg='#FFFFFF'
 					pt={HEADER_HEIGHT}
 				>
-					
 					{children}
 				</Box>
+				<Footer />
 				<Toaster
 					theme='light'
 					position='top-center'
@@ -70,10 +72,9 @@ export function Providers({ children }: PropsWithChildren) {
 						}
 					}}
 				/>
-			</>
-			{/* </PersistGate>
-				</Provider>
-			</HydrationBoundary> */}
+				{/* </PersistGate>
+				</Provider>*/}
+			</HydrationBoundary>
 		</QueryClientProvider>
 	)
 }

@@ -5,12 +5,11 @@ import {
 	Input,
 	InputGroup,
 	InputRightElement,
-	Stack
+	Stack,
+	Text
 } from '@chakra-ui/react'
 import { useState } from 'react'
 import { PiEyeClosedFill, PiEyeFill } from 'react-icons/pi'
-
-import Description from '../texts/Description'
 
 export interface IInputComponentProps {
 	name?: string
@@ -41,9 +40,18 @@ const InputComponent = ({
 	return (
 		<Stack
 			mb='4'
-			spacing='6px'
+			spacing='1'
 		>
-			{!!title && <Description>{title}</Description>}
+			{!!title && (
+				<Text
+					fontWeight='600'
+					fontSize='12px'
+					lineHeight='15.65px'
+					color='#1C1B1F'
+				>
+					{title}
+				</Text>
+			)}
 			<InputGroup>
 				<Input
 					onChange={handleChange}
@@ -51,19 +59,19 @@ const InputComponent = ({
 					value={value}
 					name={name}
 					type={show ? 'text' : type}
-					rounded='16px'
+					rounded='8px'
 					placeholder={placeholder}
-					h='56px'
+					h='54px'
 					w='100%'
-					border='1px solid #1A1D201F'
-					bg='transparent'
+					border='1px solid #ECECEC'
+					bg='#F7F7F7'
 					fontSize='16px'
 					px='14px'
 					fontWeight='400'
-					lineHeight='22px'
-					color='#232D37'
+					lineHeight='18.26px'
+					color='#1C1B1F'
 					_placeholder={{
-						opacity: '.7'
+						opacity: '.5'
 					}}
 					isRequired={required}
 					isReadOnly={isReadOnly}
