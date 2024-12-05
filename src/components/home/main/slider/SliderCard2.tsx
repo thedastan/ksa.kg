@@ -6,6 +6,8 @@ import Description from '@/components/ui/texts/Description'
 import TitleComponent from '@/components/ui/texts/TitleComponent'
 
 import img from '@/assets/img/sliderimg.png'
+ 
+
 import users from '@/assets/img/users.png'
 
 const SliderCard2 = () => {

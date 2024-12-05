@@ -6,7 +6,13 @@ import Description from '@/components/ui/texts/Description'
 import TitleComponent from '@/components/ui/texts/TitleComponent'
 
 import img from '@/assets/img/sliderimg.png'
-import users from '@/assets/img/users.png'
+ 
+
+import img1 from '@/assets/img/cardhome2.png'
+import img2 from '@/assets/img/cardhome3.png'
+import img3 from '@/assets/img/cardhome.png'
+
+
 
 const SliderCard3 = () => {
 	return (
@@ -76,7 +82,7 @@ const SliderCard3 = () => {
 						 <Box borderRadius={10} w={{ md: 237, base: 237 }} h={{ md: 98, base: 98 }} overflow="hidden">
              <Image
 							 style={{width: '100%', height: '100%', objectFit:"cover"}}
-							src={img}
+							src={img1}
 							alt='img'
 						/>
              </Box>
@@ -100,7 +106,7 @@ const SliderCard3 = () => {
 						 <Box borderRadius={10} w={{ md: 289, base: 214 }} h={{ md: 118, base: 98 }} overflow="hidden">
              <Image
 							 style={{width: '100%', height: '100%', objectFit:"cover"}}
-							src={img}
+							src={img2}
 							alt='img'
 						/>
              </Box>
@@ -123,7 +129,7 @@ const SliderCard3 = () => {
 						 <Box borderRadius={10} w={{ md: 237, base: 237 }} h={{ md: 98, base: 98 }} overflow="hidden">
              <Image
 							 style={{width: '100%', height: '100%', objectFit:"cover"}}
-							src={img}
+							src={img3}
 							alt='img'
 						/>
              </Box>
