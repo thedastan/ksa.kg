@@ -221,7 +221,7 @@ const About = () => {
 							</Text>
 						</Flex>
 						<Text
-							lineHeight='24px'
+							lineHeight='23px'
 							fontSize={14}
 							fontWeight={400}
 							w={280}
