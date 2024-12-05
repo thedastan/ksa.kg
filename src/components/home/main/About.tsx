@@ -14,6 +14,28 @@ import img3 from '@/assets/img/textile.png'
 import { CONTAINER_WIDTH } from '@/config/_variables.config'
 
 const About = () => {
+	const data = [
+		{
+			num: '70',
+			sum: '%',
+			desc: 'Семей в швейной отрасли имеют хотя бы одного члена, работающего в этой отрасли.'
+		},
+		{
+			num: '50',
+			sum: 'k',
+			desc: 'Рабочих, большинство из которых - женщины.'
+		},
+		{
+			num: '1млрд',
+			sum: '+',
+			desc: 'Оборот швейной отрасли составляет более 1 миллиарда долларов в год.'
+		},
+		{
+			num: '20',
+			sum: '%',
+			desc: 'Рост капитала в текущем году блогодаря инвестициям и развитию отрасли'
+		}
+	]
 	return (
 		<Box p='100px 0'>
 			<Container maxW={CONTAINER_WIDTH}>
@@ -28,12 +50,12 @@ const About = () => {
 						w='100%'
 						maxW={1000}
 						justifyContent='center'
-						flexDirection={{ md: 'row', base:"column" }}
+						flexDirection={{ md: 'row', base: 'column' }}
 						gap={20}
 						alignItems='center'
 						bg='#EFEFEF'
 						borderRadius={10}
-						p={{ md: '5px 20px', base:'40px 0px' }}
+						p={{ md: '5px 20px', base: '40px 0px' }}
 						_hover={{ bg: '#E4E7FF' }}
 					>
 						<Flex
@@ -43,14 +65,14 @@ const About = () => {
 							gap={6}
 						>
 							<Title
-								fontSize={{ md: 42, base:30 }}
+								fontSize={{ md: 42, base: 30 }}
 								fontWeight={700}
 							>
 								О нас
 							</Title>
 							<Description
 								lineHeight='26px'
-								w={{ md: 435, base:"100%" }}
+								w={{ md: 435, base: '100%' }}
 								textAlign='center'
 								fontSize={16}
 							>
@@ -67,7 +89,7 @@ const About = () => {
 								Присоединиться
 							</DefButton>
 						</Flex>
-						<Box ml={{ md: '0', base:"-30px" }}>
+						<Box ml={{ md: '0', base: '-30px' }}>
 							<Image
 								width={250}
 								height={400}
@@ -78,7 +100,7 @@ const About = () => {
 					</Flex>
 
 					<Flex
-					flexDirection={{ md: 'row', base:"column" }}
+						flexDirection={{ md: 'row', base: 'column' }}
 						justifyContent='space-between'
 						gap={4}
 						mt={4}
@@ -89,14 +111,14 @@ const About = () => {
 							justifyContent='center'
 							alignItems='center'
 							textAlign='center'
-							w={{ md: "491px", base:"100%" }}
+							w={{ md: '491px', base: '100%' }}
 							h='100%'
 							bg='#EFEFEF'
-							p={{ md: 10, base:'20px 10px' }}
+							p={{ md: 10, base: '20px 10px' }}
 							_hover={{ bg: '#E4E7FF' }}
 						>
 							<Title
-								fontSize={{ md: 42, base:30 }}
+								fontSize={{ md: 42, base: 30 }}
 								fontWeight={700}
 							>
 								Цели
@@ -104,7 +126,7 @@ const About = () => {
 							<Description
 								mt={6}
 								lineHeight='26px'
-								w={{ md: 435, base:"100%" }}
+								w={{ md: 435, base: '100%' }}
 								textAlign='center'
 								fontSize={16}
 							>
@@ -124,22 +146,22 @@ const About = () => {
 							justifyContent='center'
 							alignItems='center'
 							textAlign='center'
-							w={{ md: "491px", base:"100%" }}
+							w={{ md: '491px', base: '100%' }}
 							h='100%'
 							bg='#EFEFEF'
-							p="0 10px"
+							p='0 10px'
 							_hover={{ bg: '#E4E7FF' }}
 						>
 							<Title
 								mt='45px'
-								fontSize={{ md: 42, base:30 }}
+								fontSize={{ md: 42, base: 30 }}
 								fontWeight={700}
 							>
 								Миссия
 							</Title>
 							<Description
 								lineHeight='26px'
-								w={{ md: 435, base:"100%" }}
+								w={{ md: 435, base: '100%' }}
 								textAlign='center'
 								fontSize={16}
 								mt={6}
@@ -156,58 +178,64 @@ const About = () => {
 					</Flex>
 				</Box>
 
-				<Flex justifyContent="center" flexWrap="wrap"  pt="80px" gap={4} >
-				  <Box display={{ md: 'flex', base: 'none' }} mt={2} w="1px" h="140px" bg="#EDE8E6"/>
+				<Flex
+					justifyContent={{ md: 'center', base: 'start' }}
+					flexWrap='wrap'
+					pt='80px'
+					gap={6}
+				>
+					 
+
+					 {data.map((el,index) => (
+						<Flex key={index} gap={4}>
+							<Box
+						display={{ md: 'flex', base: 'none' }}
+						mt={2}
+						w='1px'
+						h='140px'
+						bg='#EDE8E6'
+					/>
 
 					<Box>
-						<Flex alignItems="start">
-							<Text fontSize={{ md: 57, base:40 }} fontWeight={500}>70</Text>
-							<Text fontSize={{ md: 35, base:25 }} fontWeight={400}>%</Text>
-							<Text fontSize={20} mt={4} bg="#EDE8E6" p={1} borderRadius="50%">
+						<Flex alignItems='start'>
+							<Text
+								fontSize={{ md: 57, base: 40 }}
+								fontWeight={500}
+							>
+								{el.num}
+							</Text>
+							<Text
+								fontSize={{ md: 35, base: 25 }}
+								fontWeight={400}
+							>
+								{el.sum}
+							</Text>
+							<Text
+								fontSize={20}
+								mt={4}
+								bg='#EDE8E6'
+								p={1}
+								borderRadius='50%'
+							>
 								<IoArrowUpSharp />
 							</Text>
 						</Flex>
-						<Text lineHeight="24px" fontSize={14} fontWeight={400} w={280}>Семей в швейной отрасли имеют хотя бы одного члена, работающего в этой отрасли.</Text>
+						<Text
+							lineHeight='24px'
+							fontSize={14}
+							fontWeight={400}
+							w={280}
+						>
+							 {el.desc}
+						</Text>
 					</Box>
 
-					<Box display={{ md: 'flex', base: 'none' }} mt={2} w="1px" h="140px" bg="#EDE8E6"/>
-
-					<Box>
-						<Flex alignItems="start">
-							<Text fontSize={{ md: 57, base:40 }} fontWeight={500}>50</Text>
-							<Text fontSize={{ md: 35, base:25 }} fontWeight={400}>%</Text>
-							<Text fontSize={20} mt={{ md: 6, base:4 }} bg="#EDE8E6" p={{ md: 2, base:1 }} borderRadius="50%">
-								<IoArrowUpSharp />
-							</Text>
 						</Flex>
-						<Text lineHeight="24px" fontSize={14} fontWeight={400} w={280}>Рабочих, большинство из которых - женщины.</Text>
-					</Box>
 
-					<Box display={{ md: 'flex', base: 'none' }} mt={2} w="1px" h="140px" bg="#EDE8E6"/>
+					 ))}
+					 
 
-					<Box>
-						<Flex alignItems="start">
-							<Text fontSize={{ md: 57, base:40 }} fontWeight={500}>1млрд</Text>
-							<Text fontSize={{ md: 35, base:25 }} fontWeight={400}>+</Text>
-							<Text fontSize={20} mt={{ md: 6, base:5 }} bg="#EDE8E6" p={{ md: 2, base:1 }} borderRadius="50%">
-								<IoArrowUpSharp />
-							</Text>
-						</Flex>
-						<Text lineHeight="24px" fontSize={14} fontWeight={400} w={280}>Оборот швейной отрасли составляет более 1 миллиарда долларов в год.</Text>
-					</Box>
-
-					<Box display={{ md: 'flex', base: 'none' }} mt={2} w="1px" h="140px" bg="#EDE8E6"/>
-
-					<Box>
-						<Flex alignItems="start">
-							<Text fontSize={{ md: 57, base:40 }} fontWeight={500}>20</Text>
-							<Text fontSize={{ md: 35, base:25 }} fontWeight={400}>%</Text>
-							<Text fontSize={20} mt={{ md: 6, base:4 }} bg="#EDE8E6" p={{ md: 2, base:1 }} borderRadius="50%">
-								<IoArrowUpSharp />
-							</Text>
-						</Flex>
-						<Text lineHeight="24px" fontSize={14} fontWeight={400} w={280}>Рост капитала в текущем году блогодаря инвестициям и развитию отрасли</Text>
-					</Box>
+					 
 				</Flex>
 			</Container>
 		</Box>

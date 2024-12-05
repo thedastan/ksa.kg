@@ -4,9 +4,11 @@ import { Box, Container, Flex, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import Description from '@/components/ui/texts/Description'
-
+import ActiveoneComponent from '@/components/activity/activeone'
 import JustComponent from '@/components/association/just'
+import Description from '@/components/ui/texts/Description'
+import TitleComponent from '@/components/ui/texts/TitleComponent'
+
 import { activity_pages } from './data'
 
 export default function ActivityLayout({
@@ -15,6 +17,7 @@ export default function ActivityLayout({
 	children: React.ReactNode
 }>) {
 	const pathname = usePathname()
+	const isLastPage = pathname === activity_pages[activity_pages.length - 1].path
 
 	return (
 		<Container
@@ -22,21 +25,28 @@ export default function ActivityLayout({
 			pt='39px'
 		>
 			<Flex gap={{ xl: '157px', md: '50px' }}>
-				<Box w="100%"   maxW='700px'>{children}</Box>
+				<Box
+					w='100%'
+					maxW='700px'
+				>
+					{children}
+				</Box>
 
-				<Stack  
-				display={{ md: "flex", base: 'none' }}
+				<Stack
+					display={{ md: 'flex', base: 'none' }}
 					pl='10px'
 					borderLeft='solid 1px #4a4a4a7e'
 					h='100%'
 					w='233px'
 				>
+					<Link href={"/activity/activityone"}> 
 					<Description
 						fontWeight={600}
 						color='#3046BF'
 					>
 						Деятельность
 					</Description>
+					</Link>
 					{activity_pages.map((el, idx) => (
 						<Link
 							href={el.path}
@@ -53,7 +63,11 @@ export default function ActivityLayout({
 					))}
 				</Stack>
 			</Flex>
-			 
+			{isLastPage && (
+				<Box>
+					<ActiveoneComponent />
+				</Box>
+			)}
 		</Container>
 	)
 }

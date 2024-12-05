@@ -34,7 +34,7 @@ const data = [
 const PartnersComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
       Партнёры Ассоциации швейной и лёгкой промышленности Кыргызстана
 			</TitleComponent>
 

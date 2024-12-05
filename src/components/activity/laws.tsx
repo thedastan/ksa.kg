@@ -18,15 +18,16 @@ const LawsComponent = () => {
 			flexDirection='column'
 			gap={4}
 		>
-			<TitleComponent pb={4}>Документы</TitleComponent>
+			<TitleComponent fontSize={{ md: 34, base: 26 }} pb={4}>Документы</TitleComponent>
 			{data_laws.map((el, index) => (
 				<Flex
 					flexDirection='column'
+					cursor="pointer"
 					justifyContent='space-between'
 					key={index}
 					onClick={() => router.push(`/activity/laws/${el.id}`)}
 					w='100%'
-					h='147px'
+					h={{ md: '147px', base: '100%' }}
 					bg='#F7F7F7'
 					p={5}
 					borderRadius={10}
@@ -34,11 +35,12 @@ const LawsComponent = () => {
 					<Title
 						lineHeight='30px'
 						textAlign='start'
+						pb={{ md: 0, base: 2 }}
 					>
 						{el.title}
 					</Title>
 					<hr />
-					<Flex justifyContent='space-between'>
+					<Flex mt={{ md: 0, base: '10px' }} justifyContent='space-between' flexDir={{ md: "row", base: "column" }}>
 						<Text
 							color='gray.600'
 							fontSize={14}
