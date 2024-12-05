@@ -26,7 +26,7 @@ import { CONTAINER_WIDTH } from '@/config/_variables.config'
 const data = [
 	{
 		index: 0,
-		title: 'Импортеры товаров',
+		title: ' Швейные услуги',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -34,7 +34,7 @@ const data = [
 
 	{
 		index: 1,
-		title: 'Импортеры товаров',
+		title: 'Импортеры тканей',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -42,7 +42,7 @@ const data = [
 
 	{
 		index: 2,
-		title: 'Импортеры товаров',
+		title: 'Фурнитура',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -50,7 +50,7 @@ const data = [
 
 	{
 		index: 3,
-		title: 'Импортеры товаров',
+		title: 'Логистические услуги',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -58,7 +58,7 @@ const data = [
 
 	{
 		index: 4,
-		title: 'Импортеры товаров',
+		title: 'Маркировка товаров',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -66,15 +66,15 @@ const data = [
 
 	{
 		index: 5,
-		title: 'Импортеры товаров',
+		title: 'Обучение и курсы',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
 	},
 
 	{
-		index: 8,
-		title: 'Импортеры товаров',
+		index: 6,
+		title: 'Сублимация и печать',
 		description:
 			'Компании, которые занимаются поставками материалов и оборудования из Китая для швейных производств. ',
 		image: img
@@ -128,19 +128,19 @@ const AccordionComponent = () => {
 										as={Box}
 										flex='1'
 										// pt={{ md: '40px', base: '28px' }}
-										p={{ md:'40px 0', base: '20px' }}
+										p={{ md:'40px 0', base: '16px' }}
 										cursor='pointer'
 									>
 										<Flex
 											justifyContent='space-between'
-											alignItems='start '
+											alignItems={{ md: 'center ', base: 'center ' }}
 											w='100%'
 										>
-											<Flex alignItems='center'>
+											<Flex alignItems='start'>
 												<Text
 													fontSize='16px'
 													mr={4}
-													mt={-8}
+													mt={{ md: -8, base: 0 }}
 												>
 													{`0${el.index + 1}`}{' '}
 												</Text>
@@ -213,6 +213,7 @@ const AccordionComponent = () => {
 														justifyContent='space-between'
 														h='100%'
 														gap='40px'
+														 
 													>
 														<HiOutlineMinus fontSize='24px' />
 													</Flex>

@@ -105,7 +105,7 @@ const data = [
 const DirectionComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
       Основные направления деятельности Кыргызской платформы швейных ассоциаций на 2024 год и до 2030 года:
 			</TitleComponent>
 

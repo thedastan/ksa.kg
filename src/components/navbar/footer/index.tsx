@@ -63,6 +63,8 @@ const Footer = () => {
 					>
 						<Flex
 							flexDir='column'
+							alignItems={{ md: "start", base: "center" }}
+							textAlign={{ md: "start", base: "center" }}
 							gap={6}
 						>
 							<Image
@@ -138,7 +140,7 @@ const Footer = () => {
 							</Text>
 						</Flex>
 
-						<Flex gap={10}>
+						<Box  display={{ md: "flex", base: "none" }} gap={10}>
 							<Flex flexDirection='column'>
 								<Text
 									color='grey'
@@ -239,18 +241,18 @@ const Footer = () => {
 									</Link>
 								))}
 							</Flex>
-						</Flex>
+						</Box>
 					</Flex>
 				</Container>
 			</Box>
 			<Flex
-				h='44px'
+				h={{ md: "44px", base: '100%' }}
 				alignItems='center'
 				bg='#3046BF'
 			>
 				<Container maxW={CONTAINER_WIDTH}>
-					<Flex justifyContent="space-between" alignItems='center'>
-						<Flex gap={8} color="white" alignItems='center'>
+					<Flex py={{ md: "0", base: 8 }} gap={{ md: 0, base: 4 }} flexDir={{ md: "row", base: "column" }} justifyContent="space-between" alignItems='center'>
+						<Flex flexDir={{ md: "row", base: "column" }} gap={{ md: 8, base: 4 }}  color="white" alignItems='center'>
 							<Text
 								fontSize={12}
 								fontWeight={400}

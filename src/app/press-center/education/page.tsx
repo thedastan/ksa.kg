@@ -1,4 +1,4 @@
-import EducationComponent from '@/components/press-center/education';
+import EducationComponent from '@/components/press-center/educations';
 import React from 'react';
 
 const EducationPage = () => {

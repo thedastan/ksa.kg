@@ -188,7 +188,7 @@ const data = [
 const CharterComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
 				Устав Ассоциации Швейных Предприятий Кыргызстана
 			</TitleComponent>
 			<Description mt='14px'>

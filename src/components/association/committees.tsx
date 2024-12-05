@@ -75,7 +75,7 @@ const data = [
 const CommitteesComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
 				Комитеты и комиссии Ассоциации швейников Кыргызстана
 			</TitleComponent>
 

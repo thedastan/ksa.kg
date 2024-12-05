@@ -11,7 +11,7 @@ import { CONTAINER_WIDTH } from '@/config/_variables.config'
 
 const SearchProduct = () => {
 	return (
-		<Box>
+		<Box pt={20}>
 			<Container maxW={CONTAINER_WIDTH}>
 				<Flex
 					color='white'

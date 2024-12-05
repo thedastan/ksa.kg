@@ -23,6 +23,15 @@ import { authService } from '@/services/auth.service'
 const RegisterForm = (props: { inModal?: boolean }) => {
 	const [isSended, setSended] = useState(false)
 	const [value, setValue] = useState<IRegisterForm>({
+
+import DefButton from '@/components/ui/buttons/DefButton'
+import InputComponent from '@/components/ui/inputs/InputComponent'
+import PhoneInputComponent from '@/components/ui/inputs/PhoneInputComponent'
+
+import { EnumUserRole, RoleTypes } from '@/models/user.model'
+
+const RegisterForm = (props: { inModal?: boolean }) => {
+	const [value, setValue] = useState({
 		phone: '',
 		email: '',
 		role: EnumUserRole.SUPERADMIN
@@ -81,6 +90,7 @@ const RegisterForm = (props: { inModal?: boolean }) => {
 			</Link>
 		</Flex>
 	) : (
+	return (
 		<Box
 			mx='auto'
 			maxW='420px'
@@ -141,6 +151,45 @@ const RegisterForm = (props: { inModal?: boolean }) => {
 					Далее
 				</DefButton>
 			</form>
+			<RadioCard
+				onClick={() => setRole(EnumUserRole.CUSTOMER)}
+				title='Я — заказчик'
+				description='Хочу размещать заказы на пошив'
+				isActive={value.role === EnumUserRole.CUSTOMER}
+			/>
+
+			<RadioCard
+				onClick={() => setRole(EnumUserRole.MANUFACTURER)}
+				title='Я — швейное производство'
+				description={[
+					'швейное производство',
+					'поставщик сырья',
+					'фурнитуры',
+					'оборудования'
+				]}
+				isActive={value.role === EnumUserRole.MANUFACTURER}
+			/>
+
+			<PhoneInputComponent
+				handleChange={phone => setValue({ ...value, phone })}
+				title='Номер*'
+				value={value.phone}
+			/>
+
+			<InputComponent
+				handleChange={e => setValue({ ...value, email: e.target.value })}
+				value={value.email}
+				placeholder='aliya@gmail.com'
+				title='Почта*'
+				type='email'
+			/>
+
+			<DefButton
+				mt='15.5px'
+				bg='#3046BF'
+			>
+				Далее
+			</DefButton>
 		</Box>
 	)
 }

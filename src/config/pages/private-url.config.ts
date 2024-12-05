@@ -1,4 +1,5 @@
 import { EnumUserRole, RoleTypes } from '@/models/enum/user.enum'
+import { EnumUserRole, RoleTypes } from '@/models/user.model'
 
 class PRIVATE {
 	private root = '/user'

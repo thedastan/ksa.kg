@@ -25,7 +25,7 @@ const data = [
 const JoinTheAssociationComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
 				Вступить в Ассоциацию швейников Кыргызстана
 			</TitleComponent>
 			<Description mt='14px'>
