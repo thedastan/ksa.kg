@@ -13,7 +13,7 @@ import UserDashboard from '@/components/ui/providers/user-dashboard'
 import Text12 from '@/components/ui/texts/Text12'
 import Title24 from '@/components/ui/texts/Title24'
 
-import CompanyName from '@/assets/img/companyname.png'
+import CompanyName from '@/assets/img/jasmir.jpg'
 
 import DetailCompanyGallery from './detail-gallery'
 
@@ -244,7 +244,7 @@ function LeftSide() {
 								href={'www.liliya.kg'}
 								target='_blank'
 							>
-								www.liliya.kg
+								www.jasmir.ru
 							</Link>
 						</Box>
 					</Box>
@@ -255,7 +255,7 @@ function LeftSide() {
 					fontSize='14px'
 					textTransform='none'
 				>
-					Наша фабрика входит в Топ 10 лучших производителей в стране
+					Наша фабрика входит в Топ 30 лучших производителей в стране
 				</Text12>
 			</Box>
 
@@ -328,10 +328,10 @@ function LeftSide() {
 					fontWeight='400'
 				>
 					<Link
-						href={'www.liliya.kg'}
+						href={'www.jasmir.ru'}
 						target='_blank'
 					>
-						www.liliya.kg
+						www.jasmir.ru
 					</Link>
 				</Box>
 			</Stack>
