@@ -2,6 +2,7 @@
 
 import { Box, Button, Container, Flex, Input, Text } from '@chakra-ui/react'
 import axios from 'axios'
+import Link from 'next/link'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { PhoneInput } from 'react-international-phone'
@@ -11,10 +12,9 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { CONTAINER_WIDTH } from '@/config/_variables.config'
 
-import Title from '../ui/texts/Title'
 import Description from '../ui/texts/Description'
+import Title from '../ui/texts/Title'
 import TitleComponent from '../ui/texts/TitleComponent'
-import Link from 'next/link'
 
 interface IFormTelegram {
 	name: string
@@ -79,134 +79,169 @@ const PressServiceComponent = () => {
 		<Box p={0}>
 			<Container maxW={CONTAINER_WIDTH}>
 				<Box>
-
 					<Box>
-						{data.map((el,index) => (
+						{data.map((el, index) => (
 							<Box key={index}>
-								<TitleComponent pb={4} textAlign="start" fontSize={{ md: 32, base: 26 }} fontWeight={700}>{el.title}</TitleComponent>
-								 {el.description.map((el,index) => (
-									<Description mt={2} key={index}>{el.desc}</Description>
-								 ))}
-								 <Link href={"/"} target={"_blank"} style={{color:"#3046BF"}}>info@legprom.kg</Link>
+								<TitleComponent
+									pb={4}
+									textAlign='start'
+									fontSize={{ md: 32, base: 26 }}
+									fontWeight={700}
+								>
+									{el.title}
+								</TitleComponent>
+								{el.description.map((el, index) => (
+									<Description
+										mt={2}
+										key={index}
+									>
+										{el.desc}
+									</Description>
+								))}
+								<Link
+									href={'/'}
+									target={'_blank'}
+									style={{ color: '#3046BF' }}
+								>
+									info@legprom.kg
+								</Link>
 							</Box>
 						))}
 					</Box>
-					 
 
-					<Box bg="#F7F7F7" p={{ md: 10, base: 4 }} mt={10} borderRadius={20}>
-					<Title fontSize={{ md: 32, base: 22 }} py={{ md: 0, base: 6 }} fontWeight={700}>Свяжитесь с нами!</Title>
+					<Box
+						bg='#F7F7F7'
+						p={{ md: 10, base: 4 }}
+						mt={10}
+						borderRadius={20}
+					>
+						<Title
+							fontSize={{ md: 32, base: 22 }}
+							py={{ md: 0, base: 6 }}
+							fontWeight={700}
+						>
+							Свяжитесь с нами!
+						</Title>
 						<form onSubmit={handleSubmit(onSubmit)}>
-						 <Flex w="100%" alignItems='center'
-								justifyContent='center'>
-						 <Flex
-								flexDirection='column'
-								gap={4}
-								w={{ md: 335, base: "100%" }}
+							<Flex
+								w='100%'
 								alignItems='center'
 								justifyContent='center'
-								
 							>
 								<Flex
-								w={{ md: "335px", base: "100%" }}
-									justifyContent='center'
 									flexDirection='column'
-									alignItems='start'
-									gap={1}
-									mt={6}
+									gap={4}
+									w={{ md: 335, base: 280 }}
+									alignItems='center'
+									justifyContent='center'
 								>
-									<Text
+									<Flex
+										flexDirection='column'
+										// w={{ md: 335, base: '100%' }}
+										alignItems='center'
+										justifyContent='center'
+									>
+										<Flex
+											w={{ md: '335px', base: '100%' }}
+											justifyContent='center'
+											flexDirection='column'
+											alignItems='start'
+											gap={1}
+											mt={6}
+										>
+											<Text
+												mt={-2}
+												ml={4}
+												fontSize={12}
+												fontWeight={600}
+												minWidth='100px'
+											>
+												Номер*
+											</Text>
+											<PhoneInput
+												defaultCountry='kg'
+												className='press_service'
+												{...register('number', { required: true })}
+												value={phone}
+												onChange={phone => setPhone(phone)}
+											/>
+										</Flex>
+									</Flex>
+
+									<Flex
+										justifyContent='center'
+										flexDirection='column'
+										alignItems='start'
+										gap={1}
+										mt={-1}
+									>
+										<Text
 											mt={-2}
 											ml={4}
 											fontSize={12}
 											fontWeight={600}
 											minWidth='100px'
-									>
-										Номер*
-									</Text>
-									<PhoneInput
-										defaultCountry='kg'
-										className='press_service'
-										{...register('number', { required: true })}
-										value={phone}
-										onChange={phone => setPhone(phone)}
-									/>
-								</Flex>
+										>
+											Имя*
+										</Text>
+										<Input
+											{...register('message', { required: true })}
+											fontSize={16}
+											fontWeight={400}
+											bg='white'
+											w={{ md: 335, base: '100%' }}
+											h='46px'
+											padding='10px 20px'
+											borderRadius={8}
+											type='text'
+											placeholder='Ваше имя'
+										/>
+									</Flex>
 
-								<Flex
-									justifyContent='center'
-									flexDirection='column'
-									alignItems='start'
-									gap={1}
-									mt={-1}
-								>
-									<Text
-										mt={-2}
-										ml={4}
-										fontSize={12}
-										fontWeight={600}
-										minWidth='100px'
+									<Flex
+										justifyContent='center'
+										flexDirection='column'
+										alignItems='start'
+										gap={1}
+										mt={2}
 									>
-										Имя*
-									</Text>
-									<Input
-										{...register('message', { required: true })}
-										fontSize={16}
-										fontWeight={400}
-										bg="white"
-										w={{ md: 335, base: "100%" }}
+										<Text
+											mt={-2}
+											ml={4}
+											fontSize={12}
+											fontWeight={600}
+											minWidth='100px'
+										>
+											Сообщение*
+										</Text>
+										<Input
+											{...register('message', { required: true })}
+											fontSize={16}
+											fontWeight={400}
+											bg='white'
+											w={{ md: 335, base: '100%' }}
+											h='46px'
+											padding='10px 20px'
+											borderRadius={8}
+											type='text'
+											placeholder='Введите название'
+										/>
+									</Flex>
+
+									{/* Submit Button */}
+									<Button
+										type='submit'
+										mt={{ base: 2, md: 3 }}
+										w={{ md: 335, base: '100%' }}
 										h='46px'
-										padding='10px 20px'
-										borderRadius={8}
-										type='text'
-										placeholder='Ваше имя'
-									/>
-								</Flex>
-
-								<Flex
-									justifyContent='center'
-									flexDirection='column'
-									alignItems='start'
-									gap={1}
-									mt={2}
-
-								>
-									<Text
-										mt={-2}
-										ml={4}
-										fontSize={12}
-										fontWeight={600}
-										minWidth='100px'
+										borderRadius={32}
+										bg='#3046BF'
+										color='white'
 									>
-										Сообщение*
-									</Text>
-									<Input
-										{...register('message', { required: true })}
-										fontSize={16}
-										fontWeight={400}
-										bg="white"
-										w={{ md: 335, base: "100%" }}
-										h='46px'
-										padding='10px 20px'
-										borderRadius={8}
-										type='text'
-										placeholder='Введите название'
-									/>
+										Отправить
+									</Button>
 								</Flex>
-
-								{/* Submit Button */}
-								<Button
-									type='submit'
-									mt={{ base: 2, md: 3 }}
-									w={{ md: 335, base: "100%" }}
-									h='46px'
-									borderRadius={32}
-									bg='#3046BF'
-									color='white'
-								>
-									Отправить
-								</Button>
 							</Flex>
-						 </Flex>
 						</form>
 					</Box>
 				</Box>
