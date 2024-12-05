@@ -7,7 +7,7 @@ class PUBLIC {
 	HOME = '/'
 	FOR_CUSTOMER = `/for-client`
 	FOR_EXECUTOR = `/for-implementer`
-	
+
 	ASSOCIATION = {
 		TASKS: `${this.association}/tasks`,
 		CHARTER: `${this.association}/charter`,
@@ -34,11 +34,8 @@ class PUBLIC {
 	}
 
 	/// other pages
-	AUTH = `/auth/login`
-	REGISTER = `/auth/sign-up`
-	REGISTER_CONFIRM = `/auth/sign-up/confirmation`
-
-	RESET_PASSWORD = `/reset-password`
-	RESET_PASSWORD_CREATE = `/forgot-password/create`
+	COMPANY_DETAIL = (slug: string) => {
+		return `/company/${slug}`
+	}
 }
 export const PUBLIC_PAGES = new PUBLIC()

@@ -1,3 +1,16 @@
+import { Box, Flex, Text } from '@chakra-ui/react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { FiEdit } from 'react-icons/fi'
+import { GrLocation } from 'react-icons/gr'
+import { LuEye, LuPhone, LuTrash2 } from 'react-icons/lu'
+
+import CompanyImage from '@/assets/img/companyname.png'
+
+import { PUBLIC_PAGES } from '@/config/pages/public-url.config'
+
+import Rating from '../elements/Rating'
+
 import { Box, Divider, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
 import { FiEdit } from 'react-icons/fi'
@@ -100,6 +113,12 @@ const CompanyCard = () => {
 						bg='#000000'
 						opacity='.2'
 					/>
+					<Link href={PUBLIC_PAGES.COMPANY_DETAIL('liliya')}>
+						<LuEye />
+					</Link>
+				</Flex>
+
+				<Rating />
 					<LuEye />
 				</Flex>
 
