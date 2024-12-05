@@ -57,7 +57,7 @@ const Reliable = () => {
 								pb={3}
 								textAlign='start'
 								fontSize={40}
-								lineHeight='48px'
+								lineHeight={{ md:"48px", base: "20px" }}
 							>
 								Надёжные поставщики для вашего производства
 							</Title>
@@ -114,7 +114,7 @@ const Reliable = () => {
 						pb={3}
 						textAlign='start'
 						fontSize={27}
-						lineHeight='48px'
+						lineHeight='38px'
 					>
 						Надёжные поставщики для вашего производства
 					</Title>

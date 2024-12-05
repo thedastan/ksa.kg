@@ -53,23 +53,25 @@ const Home = () => {
 					textAlign='center'
 				>
 					<Text
-						fontSize={{ md: '42px', base: '30px' }}
-						width={{ md: '800px', base: '100%' }}
-						lineHeight='50px'
+						fontSize={{ md: '42px', base: '26px' }}
+						width={{ md: '1000px', base: '100%' }}
+						lineHeight={{ md: '50px', base: '35px' }}
 						color='#3046BF'
 						fontWeight={700}
+						pt={20}
 					>
 						<Text
 							as='span'
+							fontSize={{ md: '42px', base: '22px' }}
 							color='#E3484F'
 						>
-							Kyrgyz Sewing Association
+							АССОЦИАЦИЯ КЫРГЫЗСКИХ ШВЕЙНИКОВ
 						</Text>{' '}
 						- каталог, объединяющий всех участников легкой промышленности
 					</Text>
 				</Flex>
 				<Box>
-					<Flex
+					<Box display={{ md: "flex", base:"none" }}
 						justifyContent='space-between'
 						alignItems='center'
 						position='relative'
@@ -103,9 +105,9 @@ const Home = () => {
 						>
 							<FaChevronLeft />
 						</Button>
-					</Flex>
+					</Box>
 					<Box
-						display='flex'
+						display={{ md: "flex", base:"none" }}
 						justifyContent='space-between'
 						gap={20}
 						flexDirection='column'
@@ -115,10 +117,15 @@ const Home = () => {
 							ref={sliderRef}
 							{...settings}
 						>
-							<SliderCard1 />
+							{/* <SliderCard1 /> */}
 							<SliderCard2 />
 							<SliderCard3 />
 						</Slider>
+					</Box>
+
+					<Box display={{ md: "none", base:"block" }}>
+					<SliderCard2 />
+					<SliderCard3 />
 					</Box>
 				</Box>
 			</Container>

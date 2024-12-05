@@ -41,7 +41,7 @@ const data = [
 const TasksComponent = () => {
 	return (
 		<Box pb={34}>
-			<TitleComponent fontSize={{ md: 34, base: 28 }}>
+			<TitleComponent fontSize={{ md: 34, base: 26 }}>
 				Цели и задачи Ассоциации швейной и лёгкой промышленности Кыргызстана
 			</TitleComponent>
 			<Description mt='14px'>

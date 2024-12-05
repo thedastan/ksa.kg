@@ -35,7 +35,7 @@ const Laws_details = () => {
 		<Box>
 			<Link href={'/activity/laws'}>
 				<Text
-					ml={-8}
+					ml={{ md:-8, base: -4 }}
 					p={2}
 					fontSize={20}
 					position='absolute'
@@ -45,7 +45,7 @@ const Laws_details = () => {
 			</Link>
 			<Container maxW={CONTAINER_WIDTH}>
 				<Box>
-					<TitleComponent>{finds.title}</TitleComponent>
+					<TitleComponent fontSize={{ md: 34, base: 26 }}>{finds.title}</TitleComponent>
 					<Title
 						py={4}
 						textAlign='start'

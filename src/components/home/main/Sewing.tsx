@@ -12,7 +12,7 @@ import fon from '@/assets/img/fon.png'
 
 const Sewing = () => {
 	return (
-		<Box p="150px 0">
+		<Box  py={{ md: 40, base: 16 }}>
 			<Container maxW={CONTAINER_WIDTH}>
 				<Flex
 					color='white'

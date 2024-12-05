@@ -10,7 +10,7 @@ import { CONTAINER_WIDTH } from '@/config/_variables.config'
 
 const Associations = () => {
 	return (
-		<Box>
+		<Box pt={20}>
 			<Container maxW={CONTAINER_WIDTH}>
 				<Flex
 					 bgImage={`linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${fon.src})`}
@@ -25,8 +25,8 @@ const Associations = () => {
            textAlign="center"
            gap={{ md: 12, base:6 }}
 				>
-					<Title w={{ md:"100%", base: "90%" }} lineHeight="45px" color="white" fontSize={{ md: 60, base: 36 }}>Присоединяйтесь к Ассоциации</Title>
-					<Description lineHeight="26px" w={{ md: 625, base: "100%" }} color="white" fontSize={18}>
+					<Title w={{ md:"100%", base: "90%" }} lineHeight="45px" color="white" fontSize={{ md: 60, base: 34 }}>Присоединяйтесь к Ассоциации</Title>
+					<Description lineHeight="26px" w={{ md: 625, base: "95%" }} color="white" fontSize={18}>
 						Если у вас есть свободные ресурсы, воспользуйтесь возможностью
 						получать новые заказы и загрузить ваше производство на 100%.
 					</Description>

@@ -51,12 +51,13 @@ const DirectorsComponent = () => {
 			>
 				{data.map((el, index) => (
 					<Box
+					w="100%"
 						textAlign='center'
 						key={index}
 					>
 						<Box
-							w={220}
-							h={284}
+							w={{ md: 220, base: '100%' }}
+							h={{ md: 284, base: '100%' }}
 							overflow='hidden'
 						>
 							<Image

@@ -37,7 +37,7 @@ const Еvents = () => {
 						alignItems='center'
 						paddingBottom={6}
 					>
-						<Title lineHeight="48px" fontSize={{ md: 42, base: 40 }}>Календарь мероприятий</Title>
+						<Title lineHeight={{ md: "48px", base: "35px" }} textAlign={{ md: "center", base: "start" }} fontSize={{ md: 42, base: 26 }}>Календарь мероприятий</Title>
 						<Text
 							fontSize={30}
 							color='#3046BF'

@@ -12,13 +12,15 @@ const SliderCard2 = () => {
 	return (
 		<Box
 			w='100%'
+			h={{ md: '570px', base: '100%' }}
 			bg='#F3F4FB'
 			borderRadius={30}
 			p={{ md: 10, base: 4 }}
 		>
 			<Flex
-				flexDirection={{ md: 'row', base: 'column' }}
+				flexDirection={{ md: 'row', base: 'column-reverse' }}
 				alignItems='center'
+				justifyContent='center'
 			>
 				<Flex
 					gap={6}
@@ -27,8 +29,9 @@ const SliderCard2 = () => {
 					alignItems='start'
 				>
 					<TitleComponent
-						lineHeight={{ md: '70px', base: '40px' }}
-						fontSize={{ md: 60, base: 28 }}
+					display={{ md: "flex", base:"none" }}
+						lineHeight={{ md: '70px', base: '30px' }}
+						fontSize={{ md: 60, base: 22 }}
 					>
 						Присоединяйтесь к швейной ассоциации!
 					</TitleComponent>
@@ -39,11 +42,11 @@ const SliderCard2 = () => {
 						pl={4}
 						w={{ md: '660px', base: '100%' }}
 					>
-						<Description>
+						<Description fontSize={{ md: 18, base: 17 }}>
 							Станьте частью инновационного сообщества, которое поддерживает
 							развитие швейной индустрии.
 						</Description>
-						<Description fontSize={18}>
+						<Description mt={2} fontSize={{ md: 18, base: 17 }}>
 							Расширьте свои деловые контакты, познакомьтесь с потенциальными
 							партнерами, клиентами и специалистами в отрасли швейных дел.
 						</Description>
@@ -52,21 +55,35 @@ const SliderCard2 = () => {
 						fontSize={16}
 						fontWeight={600}
 						bg='#E3484F'
-						w={{ md: 258, base: 230 }}
-						h={{ md: '48px', base: '40px' }}
+						w={{ md: 258, base: "100%" }}
+						h={{ md: '48px', base: '48px' }}
 					>
 						Присоединиться
 					</DefButton>
 				</Flex>
-				<Box w={{ md: '473px', base: '100%' }} mt={{ md: '0', base: '40px' }}>
-					 <Box overflow="hidden"    w={{ md: '473px', base: '100%' }}>
-           <Image
-						style={{ width: '100%', height: '100%', objectFit:"cover" }}
-						src={img}
-						alt='img'
-					/>
-          
-           </Box>
+				<Box
+					w={{ md: '473px', base: '100%' }}
+					mt={{ md: '0', base: '10px' }}
+					pb={{ md: 0, base: 6 }}
+				>
+					<TitleComponent
+					display={{ md: "none", base:"block" }}
+						lineHeight={{ md: '70px', base: '30px' }}
+						fontSize={{ md: 60, base: 22 }}
+					>
+						Присоединяйтесь к швейной ассоциации!
+					</TitleComponent>
+					<Box
+					mt={{ md: '0', base: '10px' }}
+						overflow='hidden'
+						w={{ md: '473px', base: '100%' }}
+					>
+						<Image
+							style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+							src={img}
+							alt='img'
+						/>
+					</Box>
 					<Box
 						mt={{ md: '-120px', base: '-110px' }}
 						ml={{ md: '267px', base: '10px' }}
