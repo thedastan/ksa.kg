@@ -1,3 +1,11 @@
+import { Box } from '@chakra-ui/react'
+
+import AuthForm from '@/components/access/form/AuthForm'
+
 export default function AuthPage() {
-	return <div></div>
+	return (
+		<Box py='74px'>
+			<AuthForm />
+		</Box>
+	)
 }

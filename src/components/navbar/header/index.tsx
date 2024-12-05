@@ -13,10 +13,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsArrowRight } from 'react-icons/bs'
-import { HiUser } from 'react-icons/hi2'
 import { IoIosArrowDown } from 'react-icons/io'
 
-import DefButton from '@/components/ui/buttons/DefButton'
 import ContainerDefault from '@/components/ui/providers/container'
 import Description from '@/components/ui/texts/Description'
 
@@ -24,9 +22,10 @@ import logo from '@/assets/img/logo.png'
 
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 import { ACCESS_PAGES } from '@/config/pages/access-url.config'
-import { USER_PAGES } from '@/config/pages/private-url.config'
 
 import { main_navbar, navbar_menu, role_navbar } from '../data'
+
+import LoginButton from './LoginButton'
 
 const Header = () => {
 	const pathname = usePathname()
@@ -186,31 +185,8 @@ const Header = () => {
 								</Text>
 							</Link>
 						))}
-						{/* <DefButton
-							w='100px'
-							h='40px'
-							bg='#E3484F'
-						>
-							Войти
-						</DefButton> */}
-						<Link href={USER_PAGES.MY_COMPANIES}>
-							<Flex
-								alignItems='center'
-								gap='1'
-								minW='100px'
-								h='40px'
-								bg='#E3484F'
-								fontSize='14px'
-								fontWeight='400'
-								lineHeight='16.1px'
-								color='#FFFFFF'
-								rounded='100px'
-								px='4'
-							>
-								<HiUser />
-								John Doe
-							</Flex>
-						</Link>
+
+						<LoginButton />
 					</Flex>
 				</Flex>
 			</ContainerDefault>

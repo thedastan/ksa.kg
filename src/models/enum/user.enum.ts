@@ -1,7 +1,7 @@
 export enum EnumUserRole {
-	SUPERADMIN = 0,
-	CUSTOMER = 1,
-	MANUFACTURER = 2
+	SUPERADMIN = '0',
+	MANUFACTURER = '1',
+	CUSTOMER = '2'
 }
 
 export type RoleTypes =

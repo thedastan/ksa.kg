@@ -1,11 +1,15 @@
-import { Box, Divider, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Text } from '@chakra-ui/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { FiEdit } from 'react-icons/fi'
 import { GrLocation } from 'react-icons/gr'
 import { LuEye, LuPhone, LuTrash2 } from 'react-icons/lu'
-import { TiStar } from 'react-icons/ti'
 
 import CompanyImage from '@/assets/img/companyname.png'
+
+import { PUBLIC_PAGES } from '@/config/pages/public-url.config'
+
+import Rating from '../elements/Rating'
 
 const CompanyCard = () => {
 	return (
@@ -100,32 +104,12 @@ const CompanyCard = () => {
 						bg='#000000'
 						opacity='.2'
 					/>
-					<LuEye />
+					<Link href={PUBLIC_PAGES.COMPANY_DETAIL('liliya')}>
+						<LuEye />
+					</Link>
 				</Flex>
 
-				<Flex
-					gap='2'
-					alignItems='center'
-				>
-					<Text
-						fontWeight='600'
-						fontSize='14px'
-						lineHeight='32px'
-						color='#12141D'
-						letterSpacing='-0.5px'
-					>
-						0.0 / 5
-					</Text>
-					<Flex>
-						{[1, 2, 3, 4, 5].map(star => (
-							<TiStar
-								key={star}
-								color='#FFC947'
-								fontSize='18px'
-							/>
-						))}
-					</Flex>
-				</Flex>
+				<Rating />
 			</Flex>
 		</Flex>
 	)
