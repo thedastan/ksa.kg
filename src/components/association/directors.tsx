@@ -2,9 +2,8 @@ import { Box, Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import React from 'react'
 
-import ava2 from '@/assets/img/ava2.png'
-import ava3 from '@/assets/img/ava3.png'
-import ava from '@/assets/img/ava.png'
+import ava2 from '@/assets/img/diloramkan.jpeg'
+import ava3 from '@/assets/img/dinara.jpeg'
 
 import DefButton from '../ui/buttons/DefButton'
 import Description from '../ui/texts/Description'
@@ -13,22 +12,16 @@ import TitleComponent from '../ui/texts/TitleComponent'
 
 const data = [
 	{
-		image: ava,
-		title: 'Нурдин Райымкулов',
-		desc: 'Председатель Ассоциации',
-		email: 'emailemail@gmail.com'
-	},
-	{
 		image: ava2,
-		title: 'Айдана Аджиманова',
-		desc: 'Наблюдательный Орган',
-		email: 'office@jia.kg'
+		title: 'Дуйшобаева Дилорамкан',
+		desc: 'Председатель Ассоциации',
+		email: '@dilyaduishobaeva'
 	},
 	{
 		image: ava3,
-		title: 'Нурдин Райымкулов',
-		desc: 'Исполнительный орган',
-		email: 'law@jia.kg'
+		title: 'Салиева Динара',
+		desc: 'Член наблюдательного совета',
+		email: '@dinarasalieva81'
 	}
 ]
 
