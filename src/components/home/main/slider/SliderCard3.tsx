@@ -38,7 +38,7 @@ const SliderCard3 = () => {
 				>
 					<TitleComponent
 					display={{ md: "flex", base:"none" }}
-						lineHeight={{ md: '70px', base: '30px' }}
+						lineHeight={{ md: '70px', base: '31px' }}
 						fontSize={{ md: 60, base: 22 }}
 					>
 						Новости легкой промышленности Кыргызстана
