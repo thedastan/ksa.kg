@@ -7,9 +7,8 @@ import {
 	QueryClientProvider,
 	dehydrate
 } from '@tanstack/react-query'
-import { PropsWithChildren, useEffect, useState } from 'react'
+import { PropsWithChildren, useState } from 'react'
 import { Provider } from 'react-redux'
-import { PersistGate } from 'redux-persist/lib/integration/react'
 import { Toaster } from 'sonner'
 
 import Footer from '@/components/navbar/footer'
@@ -17,11 +16,9 @@ import Header from '@/components/navbar/header'
 
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 
-import { persistor, store } from '@/store/store'
+import { store } from '@/store/store'
 
 export function Providers({ children }: PropsWithChildren) {
-	const [innerHeight, setHeight] = useState(0)
-
 	const [client] = useState(
 		new QueryClient({
 			defaultOptions: {
@@ -32,10 +29,6 @@ export function Providers({ children }: PropsWithChildren) {
 		})
 	)
 	const dehydratedState = dehydrate(client)
-
-	useEffect(() => {
-		setHeight(document.documentElement.clientHeight)
-	}, [])
 
 	return (
 		<QueryClientProvider client={client}>

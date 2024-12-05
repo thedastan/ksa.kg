@@ -13,6 +13,8 @@ import MenuUserIcon from '@/assets/svg/MenuUserIcon'
 
 import { USER_PAGES } from '@/config/pages/private-url.config'
 
+import { removeFromStorage } from '@/services/auth-token.services'
+
 const AccountNavbar = () => {
 	return (
 		<Box
@@ -66,7 +68,7 @@ const AccountNavbar = () => {
 					h='1px'
 					bg='#DEDEDE'
 				/>
-				<MenuCard
+				{/* <MenuCard
 					icon={MenuTariffsIcon}
 					name='Тарифы'
 					path={USER_PAGES.TARIFFS}
@@ -76,7 +78,7 @@ const AccountNavbar = () => {
 					w='100%'
 					h='1px'
 					bg='#DEDEDE'
-				/>
+				/> */}
 				<MenuLogoutButton />
 				<Divider
 					w='100%'
@@ -138,8 +140,13 @@ function MenuCard(props: MenuCardProps) {
 }
 
 function MenuLogoutButton() {
+	const logout = () => {
+		removeFromStorage()
+		window.location.reload()
+	}
 	return (
 		<Flex
+			onClick={logout}
 			h='30px'
 			gap='5px'
 			cursor='pointer'

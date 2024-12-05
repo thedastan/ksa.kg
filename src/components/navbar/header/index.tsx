@@ -13,10 +13,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsArrowRight } from 'react-icons/bs'
-import { HiUser } from 'react-icons/hi2'
 import { IoIosArrowDown } from 'react-icons/io'
 
-import DefButton from '@/components/ui/buttons/DefButton'
 import ContainerDefault from '@/components/ui/providers/container'
 import Description from '@/components/ui/texts/Description'
 
@@ -24,13 +22,11 @@ import logo from '@/assets/img/logo.png'
 
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 import { ACCESS_PAGES } from '@/config/pages/access-url.config'
+import { USER_PAGES } from '@/config/pages/private-url.config'
 
 import { main_navbar, navbar_menu, role_navbar } from '../data'
 
 import LoginButton from './LoginButton'
-import { USER_PAGES } from '@/config/pages/private-url.config'
-
-import { main_navbar, navbar_menu, role_navbar } from '../data'
 
 const Header = () => {
 	const pathname = usePathname()
@@ -147,28 +143,6 @@ const Header = () => {
 													href={nav.path}
 													key={index}
 												>
-												>
-													{el.title}
-												</Text>
-												<IoIosArrowDown />
-											</Flex>
-										</Link>
-									</PopoverTrigger>
-									<PopoverContent
-										border='1px solid'
-										borderColor='gray.200'
-										rounded='10px'
-										p={2}
-									>
-										<Stack
-											spacing='2px'
-											w='100%'
-										>
-											{el.list.map((nav, index) => (
-												<Link
-													href={nav.path}
-													key={index}
-												>
 													<Box
 														_hover={{ bg: '#F3F4FB' }}
 														borderRadius='8px'
@@ -214,8 +188,6 @@ const Header = () => {
 						))}
 
 						<LoginButton />
-						
-				
 					</Flex>
 				</Flex>
 			</ContainerDefault>
