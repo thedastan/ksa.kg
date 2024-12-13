@@ -18,13 +18,15 @@ const CompanyCard = () => {
 			rounded='20px'
 			padding='5'
 			justifyContent='space-between'
+			flexDirection={{ xl: 'row', base: 'column' }}
+			gap='4'
 		>
 			<Flex
 				alignItems='center'
 				gap='40px'
 			>
 				<Box
-					w='160px'
+					minW='160px'
 					h='160px'
 					rounded='50%'
 					overflow='hidden'
@@ -78,8 +80,8 @@ const CompanyCard = () => {
 			</Flex>
 
 			<Flex
-				flexDirection='column'
-				alignItems='end'
+				flexDirection={{ xl: 'column', base: 'row' }}
+				alignItems={{ xl: 'end', base: 'center' }}
 				justifyContent='space-between'
 				pr='10px'
 			>

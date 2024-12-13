@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 
-import MyCompanies from '@/components/personal-account/my-companies'
+import MyCompanies from '@/components/personal-account/(manufacturer)/my-companies'
 
 import { NO_INDEX_PAGE } from '@/constants/seo/seo.constants'
 

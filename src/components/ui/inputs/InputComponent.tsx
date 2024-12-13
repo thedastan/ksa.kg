@@ -4,23 +4,21 @@ import {
 	Box,
 	Input,
 	InputGroup,
+	InputProps,
 	InputRightElement,
 	Stack,
 	Text
 } from '@chakra-ui/react'
 import { useState } from 'react'
+import { IconType } from 'react-icons/lib'
 import { PiEyeClosedFill, PiEyeFill } from 'react-icons/pi'
 
-export interface IInputComponentProps {
-	name?: string
-	placeholder?: string
+export interface IInputComponentProps extends InputProps {
 	isLight?: boolean
-	type?: string
-	value?: string
 	handleChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 	required?: boolean
 	isReadOnly?: boolean
-	RightElement?: JSX.Element
+	RightElement?: IconType
 	title?: string
 }
 
@@ -30,8 +28,8 @@ const InputComponent = ({
 	value,
 	handleChange,
 	isLight,
+	isRequired = true,
 	type = 'text',
-	required = true,
 	isReadOnly,
 	RightElement,
 	title
@@ -44,6 +42,7 @@ const InputComponent = ({
 		>
 			{!!title && (
 				<Text
+					px='3'
 					fontWeight='600'
 					fontSize='12px'
 					lineHeight='15.65px'
@@ -61,19 +60,20 @@ const InputComponent = ({
 					type={show ? 'text' : type}
 					rounded='8px'
 					placeholder={placeholder}
-					h='54px'
+					h={isLight ? '46px' : '54px'}
 					w='100%'
 					border='1px solid #ECECEC'
-					bg='#F7F7F7'
+					bg={isLight ? '#FFFFFF' : 'F7F7F7'}
 					fontSize='16px'
 					px='14px'
 					fontWeight='400'
 					lineHeight='18.26px'
 					color='#1C1B1F'
 					_placeholder={{
-						opacity: '.5'
+						opacity: '.5',
+						fontSize: '14px'
 					}}
-					isRequired={required}
+					isRequired={isRequired}
 					isReadOnly={isReadOnly}
 					autoFocus={false}
 				/>
@@ -97,13 +97,12 @@ const InputComponent = ({
 
 				{!!RightElement && (
 					<InputRightElement
-						minW='3rem'
+						minW='2.7rem'
 						h='100%'
 						display='flex'
 						alignItems='center'
-						opacity={!!value ? '1' : '.5'}
 					>
-						<Box>{RightElement}</Box>
+						<RightElement />
 					</InputRightElement>
 				)}
 			</InputGroup>

@@ -6,6 +6,8 @@ import {
 	RiYoutubeFill
 } from 'react-icons/ri'
 
+import { PUBLIC_PAGES } from '@/config/pages/public-url.config'
+
 import { activity_pages } from '@/app/activity/data'
 import { association_pages } from '@/app/association/data'
 import { press_center_pages } from '@/app/press-center/data'
@@ -19,11 +21,11 @@ export const navbar_menu = [
 export const main_navbar = [
 	{
 		title: 'Главная',
-		link: '/'
+		link: PUBLIC_PAGES.HOME
 	},
 	{
 		title: 'Каталог компаний',
-		link: '/catalog'
+		link: PUBLIC_PAGES.CATALOG
 	},
 	{
 		title: 'Выставки',

@@ -9,9 +9,12 @@ export default function CustomerUserLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<Box mt='30px'>
+		<Box
+			mt='30px'
+			pb='200px'
+		>
 			<ContainerDefault>
-				<Flex gap='38px'>
+				<Flex gap={{ lg: '38px', base: '5' }}>
 					<AccountNavbar />
 
 					<Box
