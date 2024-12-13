@@ -37,5 +37,10 @@ class PUBLIC {
 	COMPANY_DETAIL = (slug: string) => {
 		return `/company/${slug}`
 	}
+
+	CATALOG = '/catalog'
+	SUBCATEGORY = (slug: string) => {
+		return this.CATALOG + `/${slug}`
+	}
 }
 export const PUBLIC_PAGES = new PUBLIC()

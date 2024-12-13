@@ -1,5 +1,4 @@
 import {
-	Button,
 	Divider,
 	Flex,
 	Modal,
@@ -9,7 +8,6 @@ import {
 } from '@chakra-ui/react'
 
 import ModalButton from '../buttons/ModalButton'
-import InputComponent from '../inputs/InputComponent'
 import Title from '../texts/Title'
 
 interface ModalComponentProps {
@@ -42,11 +40,14 @@ const ModalComponent = ({
 			{!withoutOverlay && <ModalOverlay />}
 			<ModalContent
 				px='5'
-				py='26px'
+				py='30px'
 				rounded='20px'
 				zIndex='0'
 			>
-				<Flex justifyContent='space-between'>
+				<Flex
+					flexDirection='column'
+					alignItems='center'
+				>
 					<Title
 						color='#101010'
 						mb='10px'
@@ -55,18 +56,13 @@ const ModalComponent = ({
 					</Title>
 					{isLoading && <Spinner />}
 				</Flex>
-				<InputComponent
-					name=''
-					placeholder=''
-					isLight={true}
-				/>
 
 				<Flex
 					gap='50px'
-					mt='15px'
+					mt='5'
 					justifyContent='center'
 				>
-					<ModalButton onClick={onClose}>Назад</ModalButton>
+					<ModalButton onClick={onClose}>Нет</ModalButton>
 					<Divider
 						orientation='vertical'
 						bg='#0E121E'
@@ -77,9 +73,9 @@ const ModalComponent = ({
 					<ModalButton
 						onClick={onSubmit}
 						isDisabled={isLoading}
-						color='#69C311'
+						color='#3046BF'
 					>
-						Далее
+						Да
 					</ModalButton>
 				</Flex>
 			</ModalContent>

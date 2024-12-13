@@ -9,16 +9,19 @@ class PRIVATE {
 	}
 	MENU = this.root
 
-	// PROFILE = (role: RoleTypes) => {
-	// 	return `${this.roleObj[role]}/profile`
-	// }
-
 	PROFILE = `${this.root}/profile`
-	MY_ORDERS = `${this.root}/my-orders`
 	REVIEWS = `${this.root}/reviews`
-	MY_COMPANIES = `${this.root}/my-companies`
+
 	FAVORITES = `${this.root}/favorites`
 	TARIFFS = `${this.root}/tariffs`
 	NOTIFICATION = `${this.root}/notification`
+
+	// manufacturer:
+	MY_COMPANIES = `${this.root}/my-companies`
+	CREATE_COMPANY = `${this.root}/create-company`
+
+	// customer:
+	MY_ORDERS = `${this.root}/my-orders`
+	PLACE_AN_ORDER = `${this.root}/place-an-order`
 }
 export const USER_PAGES = new PRIVATE()

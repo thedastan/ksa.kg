@@ -8,6 +8,7 @@ import { TfiHeart } from 'react-icons/tfi'
 
 import { SocialMediaIcons } from '@/components/navbar/data'
 import Rating from '@/components/ui/elements/Rating'
+import CategoryItem from '@/components/ui/elements/category-item'
 import ContainerDefault from '@/components/ui/providers/container'
 import UserDashboard from '@/components/ui/providers/user-dashboard'
 import Text12 from '@/components/ui/texts/Text12'
@@ -413,21 +414,7 @@ function RightSideItem(props: RightSideItemProps) {
 				flexWrap='wrap'
 			>
 				{props.list?.map(el => (
-					<Box
-						key={el.id}
-						border='1px solid #E6E6E6'
-						rounded='100px'
-						whiteSpace='nowrap'
-						px='14px'
-						py='2'
-						h='29px'
-						fontWeight='400'
-						fontSize='10px'
-						lineHeight='13.04px'
-						color='#000000'
-					>
-						{el.name}
-					</Box>
+					<CategoryItem key={el.id}>{el.name}</CategoryItem>
 				))}
 			</Flex>
 		</Stack>

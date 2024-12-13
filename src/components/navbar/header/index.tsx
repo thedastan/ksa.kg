@@ -19,20 +19,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { BsArrowRight } from 'react-icons/bs'
+import { CgMenuRight } from 'react-icons/cg'
 import { IoIosArrowDown } from 'react-icons/io'
 
 import ContainerDefault from '@/components/ui/providers/container'
 import Description from '@/components/ui/texts/Description'
 
-import logo from "@/assets/img/header-logo.png"
-
-
+import logo from '@/assets/img/header-logo.png'
 
 import { HEADER_HEIGHT } from '@/config/_variables.config'
 import { ACCESS_PAGES } from '@/config/pages/access-url.config'
 
 import { main_navbar, navbar_menu, role_navbar } from '../data'
-import { CgMenuRight } from "react-icons/cg";
 
 import LoginButton from './LoginButton'
 
@@ -71,7 +69,13 @@ const Header = () => {
 								key={index}
 								h='100%'
 								borderBottom={
-									pathname === el.link ? '2px solid #E3484F' : 'none'
+									!index
+										? pathname === el.link
+											? '2px solid #E3484F'
+											: 'none'
+										: pathname.includes(el.link)
+											? '2px solid #E3484F'
+											: 'none'
 								}
 							>
 								<Link href={el.link}>{el.title}</Link>
@@ -222,17 +226,20 @@ const Header = () => {
 				onClose={onClose}
 			>
 				<DrawerOverlay />
-				<DrawerContent borderRadius="20px 0 0 20px ">
-					 <Flex p="10px 0" justifyContent="end">
-					 <Button
-						bg='none'
-						fontSize={26}
-						display={{ base: 'block', md: 'none' }}
-						onClick={onClose}
+				<DrawerContent borderRadius='20px 0 0 20px '>
+					<Flex
+						p='10px 0'
+						justifyContent='end'
 					>
-						<BsArrowRight />
-					</Button>
-					 </Flex>
+						<Button
+							bg='none'
+							fontSize={26}
+							display={{ base: 'block', md: 'none' }}
+							onClick={onClose}
+						>
+							<BsArrowRight />
+						</Button>
+					</Flex>
 					<DrawerBody>
 						<Stack spacing={4}>
 							{main_navbar.map((el, index) => (
@@ -241,7 +248,7 @@ const Header = () => {
 									href={el.link}
 								>
 									<Text
-									onClick={onClose}
+										onClick={onClose}
 										fontWeight={pathname === el.link ? 600 : 400}
 										color={pathname === el.link ? '#3046BF' : 'black'}
 									>
@@ -259,7 +266,10 @@ const Header = () => {
 										key={index}
 										href={el.link}
 									>
-										<Text onClick={onClose} color={el.link === pathname ? '#3046BF' : '#12141D'}>
+										<Text
+											onClick={onClose}
+											color={el.link === pathname ? '#3046BF' : '#12141D'}
+										>
 											{el.title}
 										</Text>
 									</Link>
@@ -286,7 +296,8 @@ const Header = () => {
 													gap={2}
 													cursor='pointer'
 												>
-													<Text onClick={onClose}
+													<Text
+														onClick={onClose}
 														fontWeight='400'
 														fontSize='14px'
 														lineHeight='16px'
@@ -322,8 +333,7 @@ const Header = () => {
 															px='2'
 															py='6px'
 														>
-															<Description  
-															
+															<Description
 																fontWeight={pathname === nav.path ? 600 : 400}
 																color={
 																	pathname === nav.path ? '#3046BF' : 'black'
@@ -343,7 +353,7 @@ const Header = () => {
 
 								<Link href={ACCESS_PAGES.REGISTER}>
 									<Flex
-									onClick={onClose}
+										onClick={onClose}
 										alignItems='center'
 										gap={2}
 									>
@@ -357,8 +367,8 @@ const Header = () => {
 										<BsArrowRight />
 									</Flex>
 								</Link>
-								<Box onClick={onClose}> 
-								<LoginButton />
+								<Box onClick={onClose}>
+									<LoginButton />
 								</Box>
 							</Flex>
 						</Stack>

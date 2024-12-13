@@ -13,6 +13,7 @@ export interface IInputComponentProps {
 	handleChange?: (value: string) => void
 	required?: boolean
 	title?: string
+	isLight?: boolean
 }
 
 const PhoneInputComponent = ({
@@ -21,15 +22,20 @@ const PhoneInputComponent = ({
 	value,
 	handleChange,
 	required = true,
-	title = 'Номер телефона'
+	title = 'Номер телефона',
+	isLight
 }: IInputComponentProps) => {
 	const countries = defaultCountries.filter(country => {
 		const { iso2 } = parseCountry(country)
 		return ['kg'].includes(iso2)
 	})
 	return (
-		<Stack spacing='1'>
+		<Stack
+			spacing='1'
+			mb='4'
+		>
 			<Text
+				px='3'
 				fontWeight='600'
 				fontSize='12px'
 				lineHeight='15.65px'
@@ -44,7 +50,7 @@ const PhoneInputComponent = ({
 				value={value}
 				required={required}
 				onChange={handleChange}
-				className={'phone-input'}
+				className={isLight ? 'phone-input-light' : 'phone-input'}
 				placeholder={placeholder}
 				autoFocus={false}
 			/>
